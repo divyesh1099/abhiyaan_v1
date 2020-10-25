@@ -23,5 +23,6 @@ urlpatterns = [
     path('departmentalfests/', include("departmentalfests.urls")),
     path('maineventsdayone/', include("maineventsdayone.urls")),
     path('maineventsdaytwo/', include("maineventsdaytwo.urls")),
+    path('maineventsdaythree/', include("maineventsdaythree.urls")),
     path('sports/', include("sports.urls"))
 ]

@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'home',
     'maineventsdayone',
     'maineventsdaytwo',
+    'maineventsdaythree',
     'sports',
     'django.contrib.admin',
     'django.contrib.auth',
