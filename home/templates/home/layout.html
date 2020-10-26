@@ -13,8 +13,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 </head>
 <body>    
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Abhiyaan</a>
+    <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/">Abhiyaan</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -22,7 +22,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="#">Home</a>
+              <a class="nav-link font-weight-bold m-1" href="/">Home</a>
             </li>
             <!-- GEBERAL HEADER DROPDOWNS -->
             <!-- {% for header in headers %}
@@ -41,173 +41,175 @@
             </li>
             {% endfor %} -->
             <!-- END GENERAL HEADER DROPDOWNS -->
-
-
             <li>
-              <div class="btn-group">
-                <button type="button" class="btn btn-secondary">Days</button>
+              <div class="btn-group m-1">
+                <a href="{% url 'days:index' %}" class="btn btn-secondary">Days</a>
                 <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <span class="sr-only">Toggle Dropdown</span>
                 </button>
                 <div class="dropdown-menu">
                   {% for day in days %}
-                  <a class="dropdown-item" href="#">{{ day }}</a>
+                  <a class="dropdown-item" href="{% url 'days:day' day %}">{{ day }}</a>
                   {% endfor %}
                 </div>
               </div>
             </li>
             <li>
-              <div class="btn-group ml-1">
-                <button type="button" class="btn btn-secondary">Departmental Fests</button>
+              <div class="btn-group m-1">
+                <a href="{% url 'departmentalfests:index' %}" class="btn btn-secondary">Departmental Fests</a>
                 <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <span class="sr-only">Toggle Dropdown</span>
                 </button>
                 <div class="dropdown-menu">
                   {% for departmentalfest in departmentalfests %}
-                  <a class="dropdown-item" href="#">{{ departmentalfest }}</a>
+                  <a class="dropdown-item" href="{% url 'departmentalfests:departmentalfest' departmentalfest %}">{{ departmentalfest }}</a>
                   {% endfor %}
                 </div>
               </div>
             </li>
             <li>
-              <div class="btn-group ml-1">
-                <button type="button" class="btn btn-secondary">Sports</button>
+              <div class="btn-group m-1">
+                <a href="{% url 'sports:index' %}" class="btn btn-secondary">Sports</a>
                 <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <span class="sr-only">Toggle Dropdown</span>
                 </button>
                 <div class="dropdown-menu">
                   {% for sport in sports %}
-                  <a class="dropdown-item" href="#">{{ sport }}</a>
+                  <a class="dropdown-item" href="{% url 'sports:sport' sport %}">{{ sport }}</a>
                   {% endfor %}
                 </div>
               </div>
             </li>
           </ul>
-          <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <form method="post" action="{% url 'home:search' %}" class="form-inline my-2 my-lg-0">
+            {% csrf_token %}
+            <input class="form-control mr-sm-2" type="search" name="q" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
           </form>
         </div>
     </nav>
     {% block body %}
     {% endblock body %}
-    <!-- Footer -->
-<footer class="page-footer font-small navbar fixed-bottom navbar-light bg-light mdb-color pt-4">
-    <!-- Footer Links -->
-    <div class="container text-center text-md-left">  
-      <!-- Footer links -->
-      <div class="row text-center text-md-left mt-3 pb-3">  
-        <!-- Grid column -->
-        <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
-          <h6 class="text-uppercase mb-4 font-weight-bold">What is Abhiyaan?</h6>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis iusto soluta perferendis sapiente ex aut sint, mollitia eaque porro doloremque.</p>
-        </div>
-        <!-- Grid column -->  
-        <hr class="w-100 clearfix d-md-none">  
-        <!-- Grid column -->
-        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
-          <h6 class="text-uppercase mb-4 font-weight-bold">Products</h6>
-          <p>
-            <a href="#!">MDBootstrap</a>
-          </p>
-          <p>
-            <a href="#!">MDWordPress</a>
-          </p>
-          <p>
-            <a href="#!">BrandFlow</a>
-          </p>
-          <p>
-            <a href="#!">Bootstrap Angular</a>
-          </p>
-        </div>
-        <!-- Grid column -->  
-        <hr class="w-100 clearfix d-md-none">  
-        <!-- Grid column -->
-        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
-          <h6 class="text-uppercase mb-4 font-weight-bold">Useful links</h6>
-          <p>
-            <a href="#!">Your Account</a>
-          </p>
-          <p>
-            <a href="#!">Become an Affiliate</a>
-          </p>
-          <p>
-            <a href="#!">Shipping Rates</a>
-          </p>
-          <p>
-            <a href="#!">Help</a>
-          </p>
-        </div>  
-        <!-- Grid column -->
-        <hr class="w-100 clearfix d-md-none">  
-        <!-- Grid column -->
-        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
-          <h6 class="text-uppercase mb-4 font-weight-bold">Contact</h6>
-          <p>
-            <i class="fas fa-home mr-3"></i> Sector-7, CBD, Belapur, Near Kharghar Railway Station, Navi Mumbai-400614</p>
-          <p>
-            <i class="fas fa-envelope mr-3"></i> abhiyaanbvcoenm2020@gmail.com</p>
-          <p>
-            <i class="fas fa-phone mr-3"></i> +91 -022-27572140</p>
-          <p>
-            <i class="fas fa-print mr-3"></i> +91 -022-27571074</p>
-        </div>
-        <!-- Grid column -->  
-      </div>
-      <!-- Footer links -->  
-      <hr>  
-      <!-- Grid row -->
-      <!-- <div class="row ">   -->
-        <!-- Grid column -->
-        <!-- <div class="col-md-7 col-lg-8">   -->
-          <!--Copyright-->
-          <!-- <p>© 2020 Copyright: -->
-            <!-- <a href="https://mdbootstrap.com/">
-              <strong> MDBootstrap.com</strong>
-            </a>
-          </p>  
-        </div> -->
-        <!-- Grid column -->  
-        <!-- Grid column -->
-        <!-- <div class="col-md-5 col-lg-4 ml-lg-2">   -->
-          <!-- Social buttons -->
-          <!-- <div class="text-center"> -->
-            <!-- <ul>
-              <li class="list-inline-item">
-                <a class="btn-floating btn-sm rgba-white-slight mx-1">
-                  <i class="fab fa-facebook-f"></i>
+    <!-- BOTTOM NAVBAR -->
+    <nav class="navbar navbar-light bg-light">
+      <footer class="page-footer font-small mdb-color pt-4">
+        <!-- Footer Links -->
+        <div class="container text-center text-md-left">  
+          <!-- Footer links -->
+          <div class="row text-center text-md-left mt-3 pb-3">  
+            <!-- Grid column -->
+            <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+              <h6 class="text-uppercase mb-4 font-weight-bold">What is Abhiyaan?</h6>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis iusto soluta perferendis sapiente ex aut sint, mollitia eaque porro doloremque.</p>
+            </div>
+            <!-- Grid column -->  
+            <hr class="w-100 clearfix d-md-none">  
+            <!-- Grid column -->
+            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+              <h6 class="text-uppercase mb-4 font-weight-bold">Products</h6>
+              <p>
+                <a href="#!">MDBootstrap</a>
+              </p>
+              <p>
+                <a href="#!">MDWordPress</a>
+              </p>
+              <p>
+                <a href="#!">BrandFlow</a>
+              </p>
+              <p>
+                <a href="#!">Bootstrap Angular</a>
+              </p>
+            </div>
+            <!-- Grid column -->  
+            <hr class="w-100 clearfix d-md-none">  
+            <!-- Grid column -->
+            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+              <h6 class="text-uppercase mb-4 font-weight-bold">Useful links</h6>
+              <p>
+                <a href="#!">Your Account</a>
+              </p>
+              <p>
+                <a href="#!">Become an Affiliate</a>
+              </p>
+              <p>
+                <a href="#!">Shipping Rates</a>
+              </p>
+              <p>
+                <a href="#!">Help</a>
+              </p>
+            </div>  
+            <!-- Grid column -->
+            <hr class="w-100 clearfix d-md-none">  
+            <!-- Grid column -->
+            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+              <h6 class="text-uppercase mb-4 font-weight-bold">Contact</h6>
+              <p>
+                <i class="fas fa-home mr-3"></i> Sector-7, CBD, Belapur, Near Kharghar Railway Station, Navi Mumbai-400614</p>
+              <p>
+                <i class="fas fa-envelope mr-3"></i> abhiyaanbvcoenm2020@gmail.com</p>
+              <p>
+                <i class="fas fa-phone mr-3"></i> +91 -022-27572140</p>
+              <p>
+                <i class="fas fa-print mr-3"></i> +91 -022-27571074</p>
+            </div>
+            <!-- Grid column -->  
+          </div>
+          <!-- Footer links -->  
+          <hr>  
+          <!-- Grid row -->
+          <!-- <div class="row ">   -->
+            <!-- Grid column -->
+            <!-- <div class="col-md-7 col-lg-8">   -->
+              <!--Copyright-->
+              <!-- <p>© 2020 Copyright: -->
+                <!-- <a href="https://mdbootstrap.com/">
+                  <strong> MDBootstrap.com</strong>
                 </a>
-              </li>
-              <li class="list-inline-item">
-                <a class="btn-floating btn-sm rgba-white-slight mx-1">
-                    <i class="fab fa-twitter"></i>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a class="btn-floating btn-sm rgba-white-slight mx-1">
-                  <i class="fab fa-google-plus-g"></i>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a class="btn-floating btn-sm rgba-white-slight mx-1">
-                  <i class="fab fa-linkedin-in"></i>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                  <a href="" class="btn-floating btn-sm rgba-white-slight mx-1">
-                    <i class="fab fa-instagram"></i>
-                  </a>
-              </li>
-            </ul> -->
-          <!-- </div> -->
-        <!-- </div> -->
-        <!-- Grid column -->
-      <!-- </div> -->
-      <!-- Grid row -->
-    </div>
-    <!-- Footer Links -->
-  </footer>
-  <!-- Footer -->
+              </p>  
+            </div> -->
+            <!-- Grid column -->  
+            <!-- Grid column -->
+            <!-- <div class="col-md-5 col-lg-4 ml-lg-2">   -->
+              <!-- Social buttons -->
+              <!-- <div class="text-center"> -->
+                <!-- <ul>
+                  <li class="list-inline-item">
+                    <a class="btn-floating btn-sm rgba-white-slight mx-1">
+                      <i class="fab fa-facebook-f"></i>
+                    </a>
+                  </li>
+                  <li class="list-inline-item">
+                    <a class="btn-floating btn-sm rgba-white-slight mx-1">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                  </li>
+                  <li class="list-inline-item">
+                    <a class="btn-floating btn-sm rgba-white-slight mx-1">
+                      <i class="fab fa-google-plus-g"></i>
+                    </a>
+                  </li>
+                  <li class="list-inline-item">
+                    <a class="btn-floating btn-sm rgba-white-slight mx-1">
+                      <i class="fab fa-linkedin-in"></i>
+                    </a>
+                  </li>
+                  <li class="list-inline-item">
+                      <a href="" class="btn-floating btn-sm rgba-white-slight mx-1">
+                        <i class="fab fa-instagram"></i>
+                      </a>
+                  </li>
+                </ul> -->
+              <!-- </div> -->
+            <!-- </div> -->
+            <!-- Grid column -->
+          </div>
+          <!-- Grid row -->
+        
+        <!-- Footer Links -->
+      </footer>
+      <!-- Footer -->
+    </nav>
+    <!-- BOTTOM NAVBAR -->
 </body>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
