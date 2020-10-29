@@ -3,5 +3,42 @@
 Days
 {% endblock title %}
 {% block body %}
-<h1>DAYS PAGE</h1>
+<div class="jumbotron d-flex justify-content-center m-0 p-3">
+  <h1 class="display-2 font-weight-bold">DAYS</h1>
+</div>
+
+<div class="container">
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active img-thumbnail img-responsive">
+              <img class="daysCarousel" src="https://images.unsplash.com/photo-1593642531955-b62e17bdaa9c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" class="d-block w-100 img-fluid" alt="...">
+          </div>
+          <div class="carousel-item img-thumbnail img-responsive">
+            <img class="daysCarousel" src="https://images.unsplash.com/photo-1603831906382-2fc06a5a829f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" class="d-block w-100 img-fluid" alt="...">
+          </div>
+          <div class="carousel-item img-thumbnail img-responsive">
+            <img class="daysCarousel" src="https://images.unsplash.com/photo-1603712313680-4f1234ab657c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" class="d-block w-100 img-fluid" alt="...">
+          </div>
+        </div>
+      </div>
+</div>
+<div class="jumbotron m-0 p-4">
+  <h1 class="font-weight-bold">Description of the day:</h1>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, harum nihil! Fugiat sit soluta dolore temporibus quo sapiente consequuntur explicabo sint ad voluptatem aliquid doloribus nemo cumque necessitatibus laboriosam illum accusamus, et libero. Maxime optio impedit aliquam nisi architecto eum reiciendis vero deleniti molestiae, repudiandae debitis saepe ipsa tenetur qui sequi distinctio illum? Similique dignissimos dolor nam ipsa laboriosam, dolorum possimus culpa quis quam reprehenderit error accusamus officia provident quisquam doloremque maiores illum consectetur! Soluta maiores excepturi eaque aliquid perferendis, cumque consequuntur rem! Officiis voluptas voluptatum error pariatur iusto aliquam adipisci nostrum, accusantium beatae eaque similique. Laboriosam repudiandae libero earum!</p>
+</div>
+<div class="container">
+  <div class="row m-1">
+    {% for day in days %}
+    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
+      <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="https://images.unsplash.com/photo-1560371865-66c11c5730dc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="Card image cap">
+        <div class="card-body">
+          <a href="{% url 'days:day' day %}"><h5 class="card-title">{{ day }} Day</h5></a>
+          <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio ipsa numquam delectus natus iusto repudiandae quidem fugit! Fuga, laudantium esse?</p>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
 {% endblock body %}
