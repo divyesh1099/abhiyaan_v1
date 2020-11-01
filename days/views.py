@@ -9,7 +9,6 @@ def index(request):
     })
 
 def day(request, day):
-    print(day)
     return render(request, "days/day.html", {
         "day":day,
         "days": ["Clan", "Corporate", "Traditional"],
