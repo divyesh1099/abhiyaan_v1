@@ -1,0 +1,136 @@
+
+ @import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
+ body{
+     background-color: lightgray;
+ }
+ .sphead{
+     margin-top: 20px;
+     background-image: url("https://images.unsplash.com/photo-1581187375550-48c9a182e38b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=926&q=80");
+     background-color: #cccccc;
+     height: 500px;
+     background-position: center;
+     background-repeat: no-repeat;
+     background-size: cover;
+     position: relative;
+ }
+ .sptext{
+     color: white;
+     padding-top: 150px;
+     padding-bottom: 150px; 
+     margin: auto;
+     width: 50%;
+ }
+ h1, .btn-block, .ptext{
+     font-family: 'Simonetta', cursive;  
+     text-align: center; 
+ }
+ h4{
+     font-family: 'Slabo 27px', serif; 
+     text-align: center;
+     text-align: center;
+ }   
+ .para{
+     background-image: url("https://media.npr.org/assets/img/2020/06/10/gettyimages-200199027-001-b5fb3d8d8469ab744d9e97706fa67bc5c0e4fa40-s1600-c85.jpg");
+     background-color: #cccccc;
+     height: 500px;
+     background-position: center;
+     background-repeat: no-repeat;
+     background-size: cover;
+     position: relative;
+     opacity: 75%;
+ }
+ .ptext {
+     text-align: center;
+     padding-top: 200px;
+     padding-bottom: 200px;
+     color: black;
+ }
+ .btnsz{
+     height: 100px;
+     width: 400px;
+     color: black;
+     font-size: 50px;
+     font-weight: bolder;
+     font-family: 'Simonetta', cursive;  
+     text-align: center; 
+     background-color: blanchedalmond;
+ }
+ h1:hover{
+     color: #3d5afe;
+ }
+ h4:hover{
+     color: darkblue;
+ }
+ .containerg {
+     position: relative;
+     width: 50%;
+   }
+ img{
+     padding-bottom: 70px;
+     opacity: 1;
+     display: block;
+     float: left;
+     width: 100%;
+     height: auto;
+     transition: .5s ease;
+     backface-visibility: hidden;  
+ }
+ .middle {
+     transition: .5s ease;
+     opacity: 0;
+     position: absolute;
+     top: 50%;
+     left: 50%; 
+     transform: translate(-50%, -50%);
+     -ms-transform: translate(-50%, -50%);
+     text-align: center;
+   }
+ 
+ .containerg:hover img{
+     opacity: 0.3;
+     
+ }
+ .containerg:hover .middle{
+   opacity: 1;
+ }
+ .text {
+   font-weight: bolder;
+   color: black;
+   font-size: 30px;
+   padding: 16px 32px;
+   
+ }
+ 
+ 
+ 
+ @media (max-width: 600px) { 
+     .sptext{
+         font-size: x-large;
+     }
+     .ptext{
+         font-size: xx-large;
+     }
+     .containerg {
+         -ms-flex: 100%;
+         flex: 100%;
+         max-width: 70%;
+         margin-left: 70px;
+       }
+ }
+ @media (min-width: 600px) and (max-width: 1000px) {
+     .sptext{
+         font-size: xx-large;
+     }
+     .ptext{
+         font-size: xx-large;
+     }
+     .containerg {
+         -ms-flex: 100%;
+         flex: 100%;
+         max-width: 70%;
+         margin-left: 100px;
+       }
+ 
+ 
+ }
+ 

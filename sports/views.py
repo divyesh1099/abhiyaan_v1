@@ -1,7 +1,9 @@
 from django.shortcuts import render
-
+from .models import *
 # Create your views here.
 def index(request):
+    sportlist=Sportlist.objects.all()
+    print(sportlist[0].sports)
     return render(request, "sports/index.html", {
         "days": ["Clan", "Corporate", "Traditional"],
         "departmentalfests": ["CSE", "IT", "EXTC", "ME", "CE"],
