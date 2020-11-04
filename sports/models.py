@@ -24,7 +24,7 @@ class Sportlist(models.Model):
     quoteOne    =   models.CharField(max_length=200)
     quoteTwo    =   models.CharField(max_length=200)
     description =   models.TextField(blank=True)
-    sports      =   models.ManyToManyField(Sport, related_name="sportsofsportlist", blank=True)
+    sports      =   models.ForeignKey(Sport, related_name="sportsofsportlist", blank=True, on_delete=models.CASCADE)
 
     def __str__(self):
         return "Sportslist"

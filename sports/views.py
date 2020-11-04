@@ -11,6 +11,8 @@ def index(request):
     })
 
 def sport(request, sport):
+    sportaa=Sportlist.objects.all()
+    print(sportaa.name)
     return render(request, "sports/sport.html", {
         "sport":sport,
         "days": ["Clan", "Corporate", "Traditional"],
