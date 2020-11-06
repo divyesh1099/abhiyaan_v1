@@ -25,7 +25,7 @@ urlpatterns = [
     path('maineventsdayone/', include("maineventsdayone.urls")),
     path('maineventsdaytwo/', include("maineventsdaytwo.urls")),
     path('maineventsdaythree/', include("maineventsdaythree.urls")),
-    path('sports/', include("sports.urls"))
+    path('sports/', include("sports.urls")),
 ]
 
 urlpatterns = urlpatterns + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
