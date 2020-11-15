@@ -27,21 +27,21 @@
               <a class="nav-link font-weight-bold m-1" href="/">Home</a>
             </li>
             <!-- GEBERAL HEADER DROPDOWNS -->
-            <!-- {% for header in headers %}
-            <li>
-              <div class="btn-group ml-1">
-                <button type="button" class="btn btn-secondary">{{ header }}</button>
-                <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <span class="sr-only">Toggle Dropdown</span>
-                </button>
-                <div class="dropdown-menu">
-                  {% for event in header.events %}
-                  <a class="dropdown-item" href="#">{{ event }}</a>
-                  {% endfor %}
-                </div>
-              </div>
-            </li>
-            {% endfor %} -->
+            <!-- {% for header in headers %} -->
+             <!-- <li> -->
+              <!-- <div class="btn-group ml-1"> -->
+                <!-- <button type="button" class="btn btn-secondary">{{ header }}</button> -->
+                <!-- <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> -->
+                  <!-- <span class="sr-only">Toggle Dropdown</span> -->
+                <!-- </button> -->
+                <!-- <div class="dropdown-menu"> -->
+                  <!-- {% for event in header.events %} -->
+                  <!-- <a class="dropdown-item" href="#">{{ event }}</a> -->
+                  <!-- {% endfor %} -->
+                <!-- </div> -->
+              <!-- </div> -->
+            <!-- </li> -->
+            <!-- {% endfor %} --> 
             <!-- END GENERAL HEADER DROPDOWNS -->
             <li>
               <div class="btn-group m-1">
@@ -50,8 +50,8 @@
                   <span class="sr-only">Toggle Dropdown</span>
                 </button>
                 <div class="dropdown-menu">
-                  {% for day in days %}
-                  <a class="dropdown-item" href="{% url 'days:day' day %}">{{ day }}</a>
+                  {% for aday in day %}
+                  <a class="dropdown-item" href="{% url 'days:day' aday.name %}">{{ aday.name }}</a>
                   {% endfor %}
                 </div>
               </div>
@@ -63,8 +63,8 @@
                   <span class="sr-only">Toggle Dropdown</span>
                 </button>
                 <div class="dropdown-menu">
-                  {% for departmentalfest in departmentalfests %}
-                  <a class="dropdown-item" href="{% url 'departmentalfests:departmentalfest' departmentalfest %}">{{ departmentalfest }}</a>
+                  {% for department in departments %}
+                  <a class="dropdown-item" href="{% url 'departmentalfests:department' department.name %}">{{ department.name }}</a>
                   {% endfor %}
                 </div>
               </div>

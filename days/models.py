@@ -4,7 +4,7 @@ from django.db import models
 # Create your models here.
 class Event(models.Model):
     name           =  models.CharField(max_length=64)
-    image          =  models.ImageField(blank=True)
+    image          =  models.ImageField(upload_to='images', blank=True)
     description    =  models.TextField(blank=True)
     eventhead      =  models.CharField(max_length=64)
     rules          =  models.TextField(blank=True)
@@ -16,9 +16,9 @@ class Event(models.Model):
 
 class Day(models.Model):
     name        =  models.CharField(max_length=64)
-    imageOne    =  models.ImageField(blank=True)
-    imageTwo    =  models.ImageField(blank=True)
-    imageThree  =  models.ImageField(blank=True)
+    imageOne    =  models.ImageField(upload_to='images', blank=True)
+    imageTwo    =  models.ImageField(upload_to='images', blank=True)
+    imageThree  =  models.ImageField(upload_to='images', blank=True)
     description =  models.TextField(blank=True)
     events      =  models.ManyToManyField(Event, blank=True, related_name="eventsofday")
 
@@ -28,9 +28,9 @@ class Day(models.Model):
     
 
 class Days(models.Model):
-    imageOne   =  models.ImageField(blank=True)
-    imageTwo   =  models.ImageField(blank=True)
-    imageThree =  models.ImageField(blank=True)
+    imageOne   =  models.ImageField(upload_to='images', blank=True)
+    imageTwo   =  models.ImageField(upload_to='images', blank=True)
+    imageThree =  models.ImageField(upload_to='images', blank=True)
     description=  models.TextField(blank=True)
     day        =  models.ManyToManyField(Day, blank=True, related_name="dayofdays")
 
