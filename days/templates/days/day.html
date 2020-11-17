@@ -1,10 +1,10 @@
 {% extends "home/layout.html" %}
 {% block title %}
-{{ tday.name }}
+{{ tday.name|safe }}
 {% endblock %}
 {% block body %}
 <div class="jumbotron d-flex justify-content-center m-0 p-3">
-    <h1 class="display-2 font-weight-bold">{{ tday.name|upper }}</h1>
+    <h1 class="display-2 font-weight-bold">{{ tday.name|upper|safe }}</h1>
 </div>
 <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
@@ -47,8 +47,8 @@
                       </div>
                       <div class="col-md-8">
                         <div class="card-body">
-                          <h5 class="card-title">{{ event.name }}</h5>
-                          <p class="card-text">{{ event.description|truncatewords:20 }}</p>
+                          <h5 class="card-title">{{ event.name|safe }}</h5>
+                          <p class="card-text">{{ event.description|truncatewords:20|safe }}</p>
                           <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                         </div>
                       </div>
@@ -59,7 +59,7 @@
     </div>
 </div>
 <div class="jumbotron m-1 p-3 text-center">
-  <h1>What is {{ tday.name }}?</h1>
-  <p>{{ tday.description }}</p>
+  <h1>What is {{ tday.name|safe }}?</h1>
+  <p>{{ tday.description|safe }}</p>
 </div>
 {% endblock %}
