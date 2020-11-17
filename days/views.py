@@ -24,7 +24,7 @@ def index(request):
 
 def day(request, day):
     oday=Day.objects.all()
-    days=Days.objects.all()[0]
+    days=Days.objects.all()
     tday=Day.objects.get(name=day)
     events=Event.objects.all()
     return render(request, "days/day.html", {

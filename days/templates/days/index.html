@@ -23,7 +23,7 @@ Days
 </div>
 <div class="p-4 container text-centre">
   <h1 class="font-weight-bold text-center">What are Days:</h1>
-  <p class="text-center ">{{ days.description }}</p>
+  <p class="text-center ">{{ days.description|safe }}</p>
 </div>
 <div class="container">
   <div class="row m-1">
@@ -32,8 +32,8 @@ Days
       <div class="card img-thumbnail" style="width: 18rem;">
         <img class="card-img-top" src="{{ aday.imageOne.url }}" alt="Card image cap">
         <div class="card-body">
-          <a href="{% url 'days:day' aday %}"><h5 class="card-title">{{ aday.name }}</h5></a>
-          <p class="card-text">{{ aday.description|truncatewords:23 }}<a href="{% url 'days:day' aday %}">...</h5></a></p>
+          <a href="{% url 'days:day' aday %}"><h5 class="card-title">{{ aday.name|safe }}</h5></a>
+          <p class="card-text">{{ aday.description|truncatewords:100|safe }}<a href="{% url 'days:day' aday %}">...</h5></a></p>
         </div>
       </div>
     </div>
