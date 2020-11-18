@@ -12,15 +12,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
         tinycomments_mode: 'embedded',
         tinycomments_author: 'Author name'
       });
-
-      tinymce.init({
-        selector: 'input:text',
-        plugins: 'autolink autosave lists media table link image',
-        toolbar: 'undo redo | styleselect | bold italic underline lineheight strikethrough superscript subscript | alignleft aligncenter alignright alignjustify | bullist numlist | link image  media | outdent indent | forecolor backcolor | table',
-        toolbar_mode: 'floating',
-        tinycomments_mode: 'embedded',
-        tinycomments_author: 'Author name'
-      });
     }
     
 });

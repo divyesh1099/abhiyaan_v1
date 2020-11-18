@@ -27,7 +27,6 @@ class Day(models.Model):
     description =  models.TextField(blank=True)
     events      =  models.ManyToManyField(Event, blank=True, related_name="eventsofday")
 
-
     def __str__(self):
         return remove_html_tags(self.name)
     
