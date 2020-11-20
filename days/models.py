@@ -14,7 +14,7 @@ class Event(models.Model):
     description    =  models.TextField(blank=True)
     eventhead      =  models.CharField(max_length=1000)
     rules          =  models.TextField(blank=True)
-    trialimage     =  models.ImageField(blank=True)
+    registrationform= models.CharField(max_length=1000, blank=True)
 
     def __str__(self):
         return remove_html_tags(self.name)
