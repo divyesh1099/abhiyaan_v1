@@ -52,6 +52,22 @@
                 <div class="dropdown-menu">
                   {% for aday in day %}
                   <a class="dropdown-item" href="{% url 'days:day' aday.name %}">{{ aday.name }}</a>
+
+                  <!-- BUTTON INSIDE BUTTON -->
+                  <!-- <div class="btn-group m-1">
+                    <a href="{% url 'days:index' %}" class="btn btn-secondary">Days</a>
+                    <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <span class="sr-only">Toggle Dropdown</span>
+                    </button>
+                    <div class="dropdown-menu">
+                      {% for aday in day %}
+                      <a class="dropdown-item" href="{% url 'days:day' aday.name %}">{{ aday.name }}</a>
+                      {% endfor %}
+                    </div>
+                  </div> -->
+                  <!-- BUTTON INSIDE BUTTON -->
+
+
                   {% endfor %}
                 </div>
               </div>

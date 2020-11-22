@@ -11,11 +11,6 @@ def index(request):
     day=Day.objects.all()
     departments=Department.objects.all()
 
-    # return render(request, "days/index.html", {
-    #     "days": ["Clan", "Corporate", "Traditional"],
-    #     "departmentalfests": ["CSE", "IT", "EXTC", "ME", "CE"],
-    #     "sports":["Kabaddi", "Kho-Kho", "Cricket", "Batminton"]
-    # })
     return render(request, "days/index.html", {
         "days": days,
         "day":day,
@@ -47,7 +42,7 @@ def event(request, day, event):
     events=Event.objects.all()
     tevent=Day.objects.get(name=day).events.get(name=event)
     
-    return render(request, "days/event.html", {
+    return render(request, "home/event.html", {
         "days": days,
         "day": oday,
         "tday": tday,

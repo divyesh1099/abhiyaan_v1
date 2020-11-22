@@ -13,8 +13,7 @@ class Event(models.Model):
     image          =  models.ImageField(upload_to='images', blank=True)
     description    =  models.TextField(blank=True)
     eventhead      =  models.CharField(max_length=1000)
-    rules          =  models.TextField(blank=True)
-    registrationform= models.CharField(max_length=1000, blank=True)
+    rules          =  models.TextField(blank=True)    registrationform= models.CharField(max_length=1000, blank=True)
 
     def __str__(self):
         return remove_html_tags(self.name)
