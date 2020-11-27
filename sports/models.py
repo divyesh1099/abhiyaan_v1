@@ -15,7 +15,7 @@ class Sport(models.Model):
     name        =   models.CharField(max_length=1000)
     description =   models.TextField(blank=True)
     image       =   models.ImageField(blank=True)
-    registration=   models.TextField(blank=True)
+    registration=   models.CharField(max_length=1000, help_text="recommended height 1000")
     howtoplay   =   models.TextField(blank=True)
     sporthead   =   models.CharField(max_length=1000)
     fees        =   models.IntegerField()
@@ -27,10 +27,9 @@ class Sport(models.Model):
 class Sportlist(models.Model):
     imageOne    =   models.ImageField(blank=True)
     imageTwo    =   models.ImageField(blank=True)
-    quoteOne    =   models.CharField(max_length=2000)
-    quoteTwo    =   models.CharField(max_length=2000)
+    imageThree  =   models.ImageField(blank=True)
     description =   models.TextField(blank=True)
-    sports      =   models.ForeignKey(Sport, related_name="sportsofsportlist", blank=True, on_delete=models.CASCADE)
+    sports      =   models.ManyToManyField(Sport, related_name="sportsofsportlist", blank=True)
 
     def __str__(self):
         return "Sportslist"

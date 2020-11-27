@@ -3,5 +3,10 @@
 Day One
 {% endblock title %}
 {% block body %}
+<div class="jumbotron">
+    {% for i in days %}
+    <p>{{ i }}</p>
+    {% endfor %}
+</div>
 <h1>MAIN EVENTS DAY 1</h1>
 {% endblock body %}

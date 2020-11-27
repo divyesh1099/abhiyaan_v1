@@ -3,7 +3,6 @@ from .models import *
 from departmentalfests.models import *
 #-----------------------------------------------------------
 departmentalfests=DepartmentalFest.objects.all()
-
 #-----------------------------------------------------------
 # Create your views here.
 def index(request):

@@ -26,23 +26,7 @@
             <li class="nav-item active">
               <a class="nav-link font-weight-bold m-1" href="/">Home</a>
             </li>
-            <!-- GEBERAL HEADER DROPDOWNS -->
-            <!-- {% for header in headers %} -->
-             <!-- <li> -->
-              <!-- <div class="btn-group ml-1"> -->
-                <!-- <button type="button" class="btn btn-secondary">{{ header }}</button> -->
-                <!-- <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> -->
-                  <!-- <span class="sr-only">Toggle Dropdown</span> -->
-                <!-- </button> -->
-                <!-- <div class="dropdown-menu"> -->
-                  <!-- {% for event in header.events %} -->
-                  <!-- <a class="dropdown-item" href="#">{{ event }}</a> -->
-                  <!-- {% endfor %} -->
-                <!-- </div> -->
-              <!-- </div> -->
-            <!-- </li> -->
-            <!-- {% endfor %} --> 
-            <!-- END GENERAL HEADER DROPDOWNS -->
+          
             <li>
               <div class="btn-group m-1">
                 <a href="{% url 'days:index' %}" class="btn btn-secondary">Days</a>
@@ -52,22 +36,6 @@
                 <div class="dropdown-menu">
                   {% for aday in day %}
                   <a class="dropdown-item" href="{% url 'days:day' aday.name %}">{{ aday.name }}</a>
-
-                  <!-- BUTTON INSIDE BUTTON -->
-                  <!-- <div class="btn-group m-1">
-                    <a href="{% url 'days:index' %}" class="btn btn-secondary">Days</a>
-                    <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      <span class="sr-only">Toggle Dropdown</span>
-                    </button>
-                    <div class="dropdown-menu">
-                      {% for aday in day %}
-                      <a class="dropdown-item" href="{% url 'days:day' aday.name %}">{{ aday.name }}</a>
-                      {% endfor %}
-                    </div>
-                  </div> -->
-                  <!-- BUTTON INSIDE BUTTON -->
-
-
                   {% endfor %}
                 </div>
               </div>
@@ -85,6 +53,21 @@
                 </div>
               </div>
             </li>
+            <!--  -->
+            <li>
+              <div class="btn-group m-1">
+                <a href="{% url 'sports:index' %}" class="btn btn-secondary">Main Day Events</a>
+                <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <span class="sr-only">Toggle Dropdown</span>
+                </button>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href=#>Day 1</a>
+                  <a class="dropdown-item" href=#>Day 2</a>
+                  <a class="dropdown-item" href=#>Day 3</a>
+                </div>
+              </div>
+            </li>
+            <!--  -->
             <li>
               <div class="btn-group m-1">
                 <a href="{% url 'sports:index' %}" class="btn btn-secondary">Sports</a>
@@ -118,24 +101,24 @@
             <!-- Grid column -->
             <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
               <h6 class="text-uppercase mb-4 font-weight-bold">What is Abhiyaan?</h6>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis iusto soluta perferendis sapiente ex aut sint, mollitia eaque porro doloremque.</p>
+              <p>It is the annual festival of our college wherein we do all that can be described as entertainment.It has a footall of over 3K+ students from 6 departments of BVCOENM. It is a wholesome experience of arts culture and unity in all differrent forms.</p>
             </div>
             <!-- Grid column -->  
             <hr class="w-100 clearfix d-md-none">  
             <!-- Grid column -->
             <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
-              <h6 class="text-uppercase mb-4 font-weight-bold">Products</h6>
+              <h6 class="text-uppercase mb-4 font-weight-bold">Direct Links</h6>
               <p>
-                <a href="#!">MDBootstrap</a>
+                <a href="#!">Blog</a>
               </p>
               <p>
-                <a href="#!">MDWordPress</a>
+                <a href="#!">Zeal Magazine</a>
               </p>
               <p>
-                <a href="#!">BrandFlow</a>
+                <a href="#!">Sigma</a>
               </p>
               <p>
-                <a href="#!">Bootstrap Angular</a>
+                <a href="#!">BVCOENM</a>
               </p>
             </div>
             <!-- Grid column -->  
@@ -144,16 +127,16 @@
             <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
               <h6 class="text-uppercase mb-4 font-weight-bold">Useful links</h6>
               <p>
-                <a href="#!">Your Account</a>
+                <a href="{% url 'days:index' %}">Days</a>
               </p>
               <p>
-                <a href="#!">Become an Affiliate</a>
+                <a href="{% url 'departmentalfests:index' %}">Departmental Fests</a>
               </p>
               <p>
-                <a href="#!">Shipping Rates</a>
+                <a href="#!">Main Day Events</a>
               </p>
               <p>
-                <a href="#!">Help</a>
+                <a href="{% url 'sports:index' %}">Sports</a>
               </p>
             </div>  
             <!-- Grid column -->
@@ -162,13 +145,13 @@
             <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
               <h6 class="text-uppercase mb-4 font-weight-bold">Contact</h6>
               <p>
-                <i class="fas fa-home mr-3"></i> Sector-7, CBD, Belapur, Near Kharghar Railway Station, Navi Mumbai-400614</p>
+                <i class="fas fa-home mr-3"></i>Sector-7, CBD, Belapur, Near Kharghar Railway Station, Navi Mumbai-400614</p>
               <p>
-                <i class="fas fa-envelope mr-3"></i> abhiyaanbvcoenm2020@gmail.com</p>
+                <i class="fas fa-envelope mr-3"></i>abhiyaanbvcoenm2020@gmail.com</p>
               <p>
-                <i class="fas fa-phone mr-3"></i> +91 -022-27572140</p>
+                <i class="fas fa-phone mr-3"></i>+91 -022-27572140</p>
               <p>
-                <i class="fas fa-print mr-3"></i> +91 -022-27571074</p>
+                <i class="fas fa-print mr-3"></i>+91 -022-27571074</p>
             </div>
             <!-- Grid column -->  
           </div>

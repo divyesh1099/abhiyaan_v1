@@ -1,134 +1,63 @@
 {% extends "home/layout.html" %}
-{% load static %}
-<link rel="stylesheet" href="{% static 'sports/styles.css' %}">
 {% block title %}
 Sports
 {% endblock title %}
 {% block body %}
-<h1>SPORTS PAGE</h1>
-<div class="container sphead">
-    <div >
-        <h1 class="display-5 sptext">'ONE MAN CAN BE A CRUCIAL INGREDIENT ON A TEAM. BUT ONE MAN CANNOT MAKE A TEAM'</h1>
-    </div>
-    <br>
-    <div>
-        <p> 
-            <h4>We all know the saying  So <span class="font-weight-bolder">'ABHIYAAN'</span> is back again this year, for you all to showcase your 
-            <span class="font-italic">WILL POWER</span>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quos facilis ducimus animi 
-            sint deleniti, fugiat, a quis optio vero sapiente dolor soluta! Perferendis recusandae nemo mollitia labore, esse soluta eos.</h4>
-        </p>
-    </div>
-    <br>
-    <div class="para ptext font-weight-bolder display-4">
-            'SPORTS DO NOT BUILD CHARACTER, THEY REVEAL IT'.
-    </div> 
-    <br>
-    
-    <div>
-        <h1>INDOOR</h1>
-        <br>
-        <div class="row">
-            <div class="col-lg-4 col-sm-6 containerg">
-                <img src="Sportsimage\indoor\arm.jpg">
-                <div class="middle">
-                    <div class="text">Arm Wrestling</div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-6 containerg">                   
-                <img src="Sportsimage\indoor\carrom.jpg">
-                <div class="middle">
-                    <div class="text">Carrom</div>
-                </div>  
-            </div>
-            <div class="col-lg-4 col-sm-6 containerg">
-                <img src="Sportsimage\indoor\chess.jpg">
-                <div class="middle">
-                    <div class="text">Chess</div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-4 col-sm-6 containerg">
-                <img  src="\Sportsimage\indoor\badminton.jpeg">
-                <div class="middle">
-                    <div class="text">Badminton</div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-6 containerg">
-                <img src="Sportsimage\indoor\ludo.jpg">
-                <div class="middle">
-                    <div class="text">Ludo</div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-6 containerg">
-                <img  src="Sportsimage\indoor\tennis.jpg">
-                <div class="middle">
-                    <div class="text">Tennis</div>
-                </div>
-            </div>
-        </div>
-        <h1>OUTDOOR</h1>
-        <br>
-        <div class="row">
-            <div class="col-lg-4 col-sm-6 containerg">
-                <img  src="Sportsimage\outdoor\running.jpeg">
-                <div class="middle">
-                    <div class="text">Relay Race</div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-6 containerg">
-                <img  src="Sportsimage\outdoor\football.jpeg">
-                <div class="middle">
-                    <div class="text">Football</div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-6 containerg">
-                <img  src="Sportsimage\outdoor\cricket.jpeg">
-                <div class="middle">
-                    <div class="text">Cricket</div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-4 col-sm-6 containerg">
-                <img src="Sportsimage\outdoor\volleyball.jpeg">
-                <div class="middle">
-                    <div class="text">Volleyball</div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-6 containerg">
-                <img  src="Sportsimage\outdoor\basketball.jpeg">
-                <div class="middle">
-                    <div class="text">Basketball</div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-6 containerg">
-                <img  src="Sportsimage\outdoor\khokho1.jpeg">
-                <div class="middle">
-                    <div class="text">Kho-Kho</div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-4 col-sm-6 containerg">
-                <img  src="Sportsimage\outdoor\kabaddi.jpeg">
-                <div class="middle">
-                    <div class="text">Kabaddi</div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-6 containerg">
-                <img  src="Sportsimage\outdoor\swimming.jpeg">
-                <div class="middle">
-                    <div class="text">Swimming</div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-6 containerg">
-                <img  src="Sportsimage\outdoor\throwball.jpeg">
-                <div class="middle">
-                    <div class="text">Throwball</div>
-                </div>
-            </div>
-        </div>            
-    </div>
+<div class="jumbotron d-flex justify-content-center m-0 p-3">
+  <h1 class="display-2 font-weight-bold">SPORTS</h1>
 </div>
+<div class="container">
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active img-thumbnail img-responsive">
+              <img class="daysCarousel" src="{{ sportlist.imageOne.url }}" class="d-block w-100 img-fluid" alt="...">
+          </div>
+          <div class="carousel-item img-thumbnail img-responsive">
+            <img class="daysCarousel" src="{{ sportlist.imageTwo.url }}" class="d-block w-100 img-fluid" alt="...">
+          </div>
+          <div class="carousel-item img-thumbnail img-responsive">
+            <img class="daysCarousel" src="{{ sportlist.imageThree.url }}" class="d-block w-100 img-fluid" alt="...">
+          </div>
+        </div>
+      </div>
+</div>
+<div class="container">
+  <h1 class="font-weight-bold text-center">What are Sports:</h1>
+  <p class="text-center ">{{ sportlist.description|safe }}</p>
+</div>
+
+  <div class="card m-3">
+    <h3 class="card-header text-center font-weight-bold">INDOOR SPORTS</h3>
+    <div class="card-body">
+      <div class="row">
+        {% for sport in isports %}
+        <div class="col">
+          <div class="card m-1 p-1" style="width: 18rem;">
+            <h5 class="card-header font-weight-bold text-center">{{ sport.name|safe }}</h5>
+            <img class="card-img-top" src="{{ sport.image.url }}">
+            <div class="card-body">{{ sport.description|truncatewords:150|safe }}</div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+
+  <div class="card m-3">
+    <h3 class="card-header text-center font-weight-bold">OUTDOOR SPORTS</h3>
+    <div class="card-body">
+      <div class="row">
+        {% for sport in osports %}
+        <div class="col">
+          <div class="card m-1 p-1" style="width: 18rem;">
+            <h5 class="card-header font-weight-bold text-center">{{ sport.name|safe }}</h5>
+            <img class="card-img-top" src="{{ sport.image.url }}">
+            <div class="card-body">{{ sport.description|truncatewords:150|safe }}</div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
 {% endblock body %}
